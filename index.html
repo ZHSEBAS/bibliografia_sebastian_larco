@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mi Biografía</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6e3;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  header {
+    background-color: #2c3e50;
+    padding: 15px;
+  }
+
+  header h1 {
+    color: white;
+    margin: 0 0 15px 0;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+  }
+
+  #btnFamilia { background-color: #e74c3c; }
+  #btnMascota { background-color: #27ae60; }
+  #btnSobreMi { background-color: #2980b9; }
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .seccion {
+    display: none;
+    padding: 30px 20px;
+    max-width: 700px;
+    margin: 20px auto;
+  }
+
+  .activa {
+    display: block;
+  }
+
+  .contenedor {
+    background-color: white;
+    border: 3px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 300px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .contenedor img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ddd;
+  }
+
+  .contenedor h3 {
+    margin-top: 10px;
+    color: #2c3e50;
+  }
+
+  .contenedor p {
+    color: #555;
+    font-size: 14px;
+  }
+
+  .fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mi Biografía</h1>
+  <div class="botones">
+    <button id="btnFamilia" onclick="mostrarSeccion('familia')">👨‍👩‍👧‍👦 Familia</button>
+    <button id="btnMascota" onclick="mostrarSeccion('mascota')">🐾 Mascota</button>
+    <button id="btnSobreMi" onclick="mostrarSeccion('sobremi')">🙋 Sobre Mí</button>
+  </div>
+</header>
+
+<!-- SECCIÓN 1: FAMILIA -->
+<div id="familia" class="seccion activa">
+  <h2>Mi Familia</h2>
+  <div class="fila">
+
+    <div class="contenedor">
+      <img src="papa.jpg" alt="Foto de papá">
+      <h3>Carlos Andrade</h3>
+      <p>Mi papá tiene 48 años y trabaja como ingeniero civil. Le encanta el fútbol, cocinar los domingos y siempre nos da los mejores consejos.</p>
+    </div>
+
+    <div class="contenedor">
+      <img src="mama.jpg" alt="Foto de mamá">
+      <h3>Lucía Andrade</h3>
+      <p>Mi mamá tiene 45 años y es profesora de primaria. Es súper cariñosa, le gusta la jardinería y siempre está pendiente de toda la familia.</p>
+    </div>
+
+    <div class="contenedor">
+      <img src="hermanos.jpg" alt="Foto de los hermanos juntos">
+      <h3>Mateo y Valentina</h3>
+      <p>Mis hermanos: Mateo tiene 16 años y le apasiona el skateboarding; Valentina tiene 12 y ama el dibujo. Son muy unidos y siempre están jugando juntos.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECCIÓN 2: MASCOTA -->
+<div id="mascota" class="seccion">
+  <h2>Mi Mascota</h2>
+  <div class="fila">
+
+    <div class="contenedor">
+      <img src="mascota.jpg" alt="Foto de la mascota">
+      <h3>Rocky</h3>
+      <p>Rocky es un perro Golden Retriever de 3 años. Es súper juguetón, le encanta correr en el parque y recibirnos en la puerta moviendo la cola.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECCIÓN 3: SOBRE MÍ -->
+<div id="sobremi" class="seccion">
+  <h2>Sobre Mí</h2>
+  <div class="fila">
+
+    <div class="contenedor">
+      <img src="yo.jpg" alt="Foto propia">
+      <h3>Sofía Andrade</h3>
+      <p>Tengo 15 años y estudio en el colegio San Martín. Me gusta la música, dibujar y pasar tiempo con mi familia y con Rocky. Mi sueño es estudiar diseño gráfico en la universidad.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function mostrarSeccion(id) {
+    var secciones = document.getElementsByClassName('seccion');
+    for (var i = 0; i < secciones.length; i++) {
+      secciones[i].classList.remove('activa');
+    }
+    document.getElementById(id).classList.add('activa');
+  }
+</script>
+
+</body>
+</html>
